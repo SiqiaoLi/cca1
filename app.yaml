@@ -1,0 +1,30 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+
+- url: /main
+  script: main.app
+
+- url: /name
+  script: name.app
+
+- url: /password
+  script: password.app
+
+- url: /changepassword
+  script: password.app 
+
+- url: /changename
+  script: name.app
+
+- url: /.*
+  script: login.app
+
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
