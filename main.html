@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+  <head>
+    <!-- [START css] -->
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.css">
+    <!-- [END css] -->
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
+      blockquote {
+        margin-bottom: 10px;
+        border-left-color: #bbb;
+      }
+      form {
+        margin-top: 10px;
+      }
+      .form-signin input[type="text"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+      .row {
+        margin-left: 0px;
+        margin-top: 10px;
+        overflow: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Main Page</h3>
+    <div class="container">
+      <h5>Welcome, {{username}}</h5>
+
+      <form action='/name' method="post">
+        <input type="hidden" name="username" value="{{username}}">
+        <input type="hidden" name="id" value="{{id}}">
+        <input type="submit" name="" value="Change Name">
+      </form>
+
+      <form action='/password' method="post">
+        <input type="hidden" name="username" value="{{username}}">
+        <input type="hidden" name="id" value="{{id}}">
+        <input type="submit" name="" value="Change password">
+      </form>
+    </div>
+
+  </body>
+</html>
+{% endautoescape %}
